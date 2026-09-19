@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EMS Fitness — студия EMS-тренировок в Новосибирске</title>
 <meta name="description" content="EMS Fitness в микрорайоне Горский: 20-минутные EMS-тренировки с тренером, массаж, групповые занятия, фито-бар. Новосибирск, микрорайон Горский, 53. Ежедневно 09:00–22:00.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -57,8 +59,10 @@ body::before{
 }
 .nav.scrolled{background:rgba(238,240,247,.72);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-color:var(--line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
-.logo{font-size:13px;line-height:1.25;font-weight:500;letter-spacing:.01em}
-.logo sup{font-size:8px}
+.logo img{height:56px;width:auto;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.logo:hover img{transform:rotate(-4deg) scale(1.04)}
+.foot-logo{height:44px;width:auto;opacity:.9}
+footer .wrap{align-items:center}
 .nav-links{display:flex;gap:34px;font-size:14px;color:var(--ink-2)}
 .nav-links a{position:relative}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
@@ -412,7 +416,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <!-- NAV -->
 <header class="nav" id="nav">
   <div class="wrap">
-    <a href="#top" class="logo">EMS<br>Fitness<sup>™</sup><br><span style="color:var(--muted)">Горский</span></a>
+    <a href="#top" class="logo" aria-label="EMS Fitness — на главную"><img src="assets/logo.png" alt="EMS Fitness" width="115" height="119"></a>
     <nav class="nav-links" id="navLinks">
       <a href="#about">Студия</a>
       <a href="#services">Направления</a>
@@ -705,7 +709,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 <footer>
   <div class="wrap">
-    <span>© <span id="yr"></span> EMS Fitness · Новосибирск</span>
+    <span style="display:flex;align-items:center;gap:14px"><img class="foot-logo" src="assets/logo.png" alt="EMS Fitness" width="115" height="119">© <span id="yr"></span> EMS Fitness · Новосибирск</span>
     <span>ИП Федорук Алексей Александрович · ОГРНИП 317547600129110 · ИНН 143305472040</span>
   </div>
 </footer>
