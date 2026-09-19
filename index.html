@@ -154,6 +154,11 @@ h1 .line:nth-child(2) span{animation-delay:.12s}
 .hero-foot .r{text-align:right}
 .hero-foot .r .eyebrow{white-space:nowrap}
 .hero-foot .c{text-align:center}
+.foot-link{display:block;border-radius:14px;margin:-10px -14px;padding:10px 14px;transition:background .35s}
+.foot-link:hover{background:rgba(255,255,255,.55)}
+.foot-link .go{color:var(--lav);opacity:0;transition:opacity .35s}
+.foot-link:hover .go,.foot-link:focus-visible .go{opacity:1}
+@media (hover:none){.foot-link .go{opacity:1}}
 .stars{letter-spacing:2px;color:var(--lav);font-size:12px}
 
 /* ---------- sections ---------- */
@@ -486,14 +491,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       </div>
     </div>
     <div class="hero-foot">
-      <div>
-        <div class="eyebrow">Адрес</div>
+      <a class="foot-link" href="#map" aria-label="Показать адрес на карте">
+        <div class="eyebrow">Адрес <span class="go">· на карте ↓</span></div>
         <div class="big">мкр. Горский, 53<br><span style="color:var(--muted)">1 этаж · м. Студенческая</span></div>
-      </div>
-      <div class="c">
-        <div class="eyebrow">Яндекс Карты</div>
+      </a>
+      <a class="foot-link c" href="https://yandex.ru/maps/org/ems_fitness/242078270306/reviews/" target="_blank" rel="noopener" aria-label="Отзывы на Яндекс Картах">
+        <div class="eyebrow">Яндекс Карты <span class="go">· отзывы ↗</span></div>
         <div class="big">4,4 <span class="stars">★★★★★</span></div>
-      </div>
+      </a>
       <div class="r">
         <div class="eyebrow">Ежедневно 09:00–22:00</div>
         <div class="big"><a href="tel:+79830015333">+7 983 001-53-33</a><br><a href="https://wa.me/79830015333" target="_blank" rel="noopener" style="color:var(--muted)">WhatsApp ↗</a></div>
@@ -714,7 +719,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
             <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 9L9 1M3 1h6v6"/></svg></a>
         </dd>
       </dl>
-      <div class="map reveal d1">
+      <div class="map reveal d1" id="map">
         <iframe src="https://yandex.ru/map-widget/v1/?ll=82.899346%2C54.993593&z=16&oid=242078270306&ol=biz" loading="lazy" title="EMS Fitness на карте" allowfullscreen></iframe>
       </div>
     </div>
