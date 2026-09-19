@@ -29,7 +29,7 @@
   --max:1240px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + var(--bar))}
 body{
   font-family:"Manrope",system-ui,sans-serif;
   background:var(--bg);
@@ -355,19 +355,20 @@ footer{border-top:1px solid var(--line);padding:40px 0 34px;font-size:12.5px;col
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 /* concept notice */
-.concept{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:80;display:flex;align-items:center;gap:12px;
-  max-width:calc(100% - 24px);padding:10px 12px 10px 16px;border-radius:100px;font-size:13px;line-height:1.35;color:var(--ink);
-  background:rgba(255,255,255,.78);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);
-  border:1px solid rgba(255,255,255,.9);box-shadow:0 16px 40px -18px rgba(40,40,110,.45)}
+:root{--bar:38px}
+.concept{position:fixed;top:0;left:0;right:0;z-index:60;height:var(--bar);display:flex;align-items:center;justify-content:center;gap:12px;
+  padding:0 16px;font-size:13px;color:#fff;background:var(--navy);white-space:nowrap;overflow:hidden}
 .concept b{font-weight:600}
-.concept .tagc{flex:0 0 auto;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:100px;background:var(--navy);color:#fff}
-.concept a{flex:0 0 auto;white-space:nowrap;padding:7px 12px;border-radius:100px;border:1px solid rgba(14,23,51,.2);font-weight:500;transition:background .3s,color .3s}
-.concept a:hover{background:var(--navy);color:#fff}
-footer{padding-bottom:96px}
+.concept .tagc{font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:100px;background:rgba(255,255,255,.14)}
+.concept a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.45);transition:text-decoration-color .3s}
+.concept a:hover{text-decoration-color:#fff}
+.nav{top:var(--bar)}
+.hero-content{padding-top:calc(76px + var(--bar))}
+@media (max-width:980px){.menu-open .nav-links{top:calc(76px + var(--bar))}}
 @media (max-width:640px){
-  .concept{left:12px;right:12px;bottom:12px;transform:none;border-radius:18px;flex-wrap:wrap;gap:8px 10px;padding:12px 14px}
-  .concept span.txt{flex:1 1 60%}
-  footer{padding-bottom:140px}
+  :root{--bar:34px}
+  .concept{font-size:12px;gap:8px}
+  .concept .long{display:none}
 }
 
 /* modal */
@@ -429,6 +430,13 @@ footer{padding-bottom:96px}
 </style>
 </head>
 <body>
+
+<!-- CONCEPT NOTICE -->
+<aside class="concept" role="note" aria-label="О макете">
+  <span class="tagc">Концепт</span>
+  <span><b>Макет редизайна</b><span class="long">, не официальный сайт студии</span>.</span>
+  <a href="https://emsfitness.clients.site/" target="_blank" rel="noopener">Официальный сайт ↗</a>
+</aside>
 
 <!-- NAV -->
 <header class="nav" id="nav">
@@ -730,13 +738,6 @@ footer{padding-bottom:96px}
     <span>ИП Федорук Алексей Александрович · ОГРНИП 317547600129110 · ИНН 143305472040</span>
   </div>
 </footer>
-
-<!-- CONCEPT NOTICE -->
-<aside class="concept" role="note" aria-label="О макете">
-  <span class="tagc">Концепт</span>
-  <span class="txt"><b>Это макет редизайна</b>, не официальный сайт студии.</span>
-  <a href="https://emsfitness.clients.site/" target="_blank" rel="noopener">Официальный сайт ↗</a>
-</aside>
 
 <!-- FORM MODAL -->
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
